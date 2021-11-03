@@ -26,19 +26,19 @@ function draw() {
     //verändert die Farbewerte bei mousePressed
     stroke (x,255,180);
     strokeWeight(x)
-    arc(60, 60, 20, 20, 0, Math.PI/180 * 360, Math);
-    arc(100, 60, 20, 20, 0, Math.PI/180 * 360, Math);
-    arc(140, 60, 20, 20, 0, Math.PI/180 * 360, Math);
+    arc(140, 140, 20, 20, 0, Math.PI/180 * 360, Math);
+    arc(180, 140, 20, 20, 0, Math.PI/180 * 360, Math);
+    arc(220, 140, 20, 20, 0, Math.PI/180 * 360, Math);
 
     stroke (0,x,180);
-    arc(60, 100, 20, 20, 0, Math.PI/180 * 360, Math);
-    arc(100, 100, 20, 20, 0, Math.PI/180 * 360, Math);
-    arc(140, 100, 20, 20, 0, Math.PI/180 * 360, Math);
+    arc(140, 180, 20, 20, 0, Math.PI/180 * 360, Math);
+    arc(180, 180, 20, 20, 0, Math.PI/180 * 360, Math);
+    arc(220, 180, 20, 20, 0, Math.PI/180 * 360, Math);
 
     stroke (0,255,x);
-    arc(60, 140, 20, 20, 0, Math.PI/180 * 360, Math);
-    arc(100, 140, 20, 20, 0, Math.PI/180 * 360, Math);
-    arc(140, 140, 20, 20, 0, Math.PI/180 * 360, Math);
+    arc(140, 220, 20, 20, 0, Math.PI/180 * 360, Math);
+    arc(180, 220, 20, 20, 0, Math.PI/180 * 360, Math);
+    arc(220, 220, 20, 20, 0, Math.PI/180 * 360, Math);
 
   }
   
