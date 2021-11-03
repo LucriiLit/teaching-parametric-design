@@ -1,4 +1,5 @@
 let x = 0;
+let y = 0;
 
 //called only once in the beginning 
 function setup() {
@@ -8,14 +9,23 @@ function setup() {
 
 //continously called once setup is finished
 function draw() {
-  background(255, 255, 255);
+  background(0, 0, 0);
 
-    x = x + 10;
+    //x wird hochgezählt und bei 255 zurückgesetzt
+    x = x + 6;
     if (x > 255) {
-      x = x*-1;
+      x = 0;
     }
-    
+
+    x = x + 2;
+    if (x > 255) {
+      x = 0;
+    }
+
+
+    //verändert die Farbewerte bei mousePressed
     stroke (x,255,180);
+    strokeWeight(x)
     arc(60, 60, 20, 20, 0, Math.PI/180 * 360, Math);
     arc(100, 60, 20, 20, 0, Math.PI/180 * 360, Math);
     arc(140, 60, 20, 20, 0, Math.PI/180 * 360, Math);
