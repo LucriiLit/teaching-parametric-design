@@ -30,7 +30,7 @@ function draw() {
   }
 
 
-  //restarting scaling unter min Scale
+  //restarting scaling unter minScale
   if (scale <= minScale) {
     fibs = [1,1];
     initFibs();
