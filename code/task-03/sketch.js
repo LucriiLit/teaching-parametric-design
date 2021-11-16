@@ -3,8 +3,8 @@ const sketchWidth = 400;
 
 let r = 150;
 
-//useless Array
-var translates = [200,0,100,400,50,150,250,300,350];
+//almost useless Array
+let translates = [200,0,100,400,50,150,250,300,350];
 let swappX = 0;
 let swappY = 0;
 
@@ -39,6 +39,7 @@ function draw() {
       //Radius abhängig von Maus ändern
       r = increment*100;
       print(increment);
+
     }
   endShape(CLOSE);  
 }
