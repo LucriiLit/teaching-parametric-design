@@ -17,11 +17,6 @@ function draw() {
       x = 0;
     }
 
-    x = x + 2;
-    if (x > 255) {
-      x = 0;
-    }
-
 
     //verändert die Farbewerte bei mousePressed
     stroke (x,255,180);
