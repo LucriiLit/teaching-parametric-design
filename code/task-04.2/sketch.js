@@ -1,7 +1,7 @@
 const sketchHeight = 400;
 const sketchWidth = 400;
 
-let r = 150;
+let r = 120;
 
 //almost useless Array
 let translates = [200,0,100,400,50,150,250,300,350];
@@ -11,12 +11,15 @@ let swappY = 0;
 function setup() {
   createCanvas(sketchWidth, sketchHeight);
   frameRate(30);
+  noLoop();
 }
 
 function draw() {
   background(255); //zweite Ziffer = Transparenz zum vorherigen Durchlauf
   translate(translates[swappX], translates[swappY]);
   noFill();
+  strokeWeight(1);
+
 
   let increment = map(mouseX, 100, width, 0.01, PI); //X-Wert der Maus im Browser auslesen
 
@@ -32,36 +35,21 @@ function draw() {
         let y = r1 * sin(a);
 
         //Kreise generieren
-        strokeWeight(1);
         stroke("black"); //Random Blaufarben
         circle(x,y, random(0,10));
 
         //Vertices generieren (Striche zwischen Kreisen)
-        strokeWeight(0.5);
         stroke("red"); //Random Gelbfarben
         vertex(x,y)
 
         //Radius abhängig von Maus ändern
-        r = increment*100;
         print(increment);
-
-
       }
+    r = r + 10;
     endShape(CLOSE);
   }
 }
 
 function mouseClicked() {
-  save(sketch);
+  save();
 }
-
-
-
-
-
-
-/*
-HA
-Sinnvolles Objekt & Array mit einbauen
-*/
-
