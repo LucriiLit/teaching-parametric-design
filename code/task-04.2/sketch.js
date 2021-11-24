@@ -39,7 +39,7 @@ function draw() {
         circle(x,y, random(0,10));
 
         //Vertices generieren (Striche zwischen Kreisen)
-        stroke("red"); //Random Gelbfarben
+        stroke(random(100,200)); //Random Gelbfarben
         vertex(x,y)
 
         //Radius abhängig von Maus ändern
