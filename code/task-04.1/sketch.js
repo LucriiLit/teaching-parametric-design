@@ -11,16 +11,19 @@ let swappY = 0;
 function setup() {
   createCanvas(sketchWidth, sketchHeight, SVG);
   frameRate(30);
+  noLoop();
 }
 
 function draw() {
   background(255); //zweite Ziffer = Transparenz zum vorherigen Durchlauf
   translate(translates[swappX], translates[swappY]);
   noFill();
+  strokeWeight(1);
+
 
   let increment = map(mouseX, 100, width, 0.01, PI); //X-Wert der Maus im Browser auslesen
 
-  let kreise = 1;
+  let kreise = 4;
 
   //Schlaufe für Menge der Kreise bei nicht Transparenz (für SVG)
   for (let g = 1; g <= kreise; g += 1) {
@@ -32,21 +35,17 @@ function draw() {
         let y = r1 * sin(a);
 
         //Kreise generieren
-        strokeWeight(1);
         stroke("black"); //Random Blaufarben
         circle(x,y, random(0,10));
 
         //Vertices generieren (Striche zwischen Kreisen)
-        strokeWeight(1);
         stroke("red"); //Random Gelbfarben
         vertex(x,y)
 
         //Radius abhängig von Maus ändern
-        // r = increment*100;
         print(increment);
-
-
       }
+    r = r + 10;
     endShape(CLOSE);
   }
 }
@@ -54,14 +53,4 @@ function draw() {
 function mouseClicked() {
   save();
 }
-
-
-
-
-
-
-/*
-HA
-Sinnvolles Objekt & Array mit einbauen
-*/
 
