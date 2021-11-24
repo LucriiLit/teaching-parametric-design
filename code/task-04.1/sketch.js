@@ -1,7 +1,7 @@
 const sketchHeight = 400;
 const sketchWidth = 400;
 
-let r = 150;
+let r = 120;
 
 //almost useless Array
 let translates = [200,0,100,400,50,150,250,300,350];
@@ -42,7 +42,7 @@ function draw() {
         vertex(x,y)
 
         //Radius abhängig von Maus ändern
-        r = increment*100;
+        // r = increment*100;
         print(increment);
 
 
