@@ -20,7 +20,7 @@ function draw() {
 
   let increment = map(mouseX, 100, width, 0.01, PI); //X-Wert der Maus im Browser auslesen
 
-  let kreise = 4;
+  let kreise = 1;
 
   //Schlaufe für Menge der Kreise bei nicht Transparenz (für SVG)
   for (let g = 1; g <= kreise; g += 1) {
@@ -37,7 +37,7 @@ function draw() {
         circle(x,y, random(0,10));
 
         //Vertices generieren (Striche zwischen Kreisen)
-        strokeWeight(0.5);
+        strokeWeight(1);
         stroke("red"); //Random Gelbfarben
         vertex(x,y)
 
