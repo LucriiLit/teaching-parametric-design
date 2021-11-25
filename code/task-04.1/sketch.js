@@ -1,7 +1,7 @@
 const sketchHeight = 400;
 const sketchWidth = 400;
 
-let r = 120;
+let r = 40;
 
 //almost useless Array
 let translates = [200,0,100,400,50,150,250,300,350];
@@ -9,7 +9,7 @@ let swappX = 0;
 let swappY = 0;
 
 function setup() {
-  createCanvas(sketchWidth, sketchHeight, SVG);
+  createCanvas(sketchWidth, sketchHeight);
   frameRate(30);
   noLoop();
 }
@@ -40,12 +40,12 @@ function draw() {
 
         //Vertices generieren (Striche zwischen Kreisen)
         stroke("red"); //Random Gelbfarben
-        vertex(x,y)
+        curveVertex(x,y)
 
         //Radius abhängig von Maus ändern
         print(increment);
       }
-    r = r + 10;
+    r = r + 16;
     endShape(CLOSE);
   }
 }
@@ -53,4 +53,3 @@ function draw() {
 function mouseClicked() {
   save();
 }
-
