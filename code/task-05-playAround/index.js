@@ -12,26 +12,26 @@ const {translate, rotate, scale, center, align} = jscad.transforms;
 // this is where we draw our shapes
 const main = () => {
 
-    // Erstellen von 2 Variablen (const) die einen Cylinder und ein Quader zugeshrieben bekommen
-    const coolerCyli = translate([0, 0, -20], cylinder({ radius: 10 }));
-    const coolerBla = cuboid({ size: [100, 100, 1] });
+    const circleShape = circle({
+      radius: 20,
+      segments: 100,
+      center: [0, 30]
+    });
 
-    // Erstellen eines Arrays in den ein Cylinder mit speziellen Werten gepusht wird
-    const objects = [];
-    objects.push( translate([0, 0, -10], cylinder({ radius: 20, segments: 7 })) );
+    const extrudeShape = extrudeRectangular({
+      height: 200,
+      twistAngle: Math.PI * 9,
+      twistSteps: 13
+    }, circleShape);
 
-    // Erstellen eines Arrays und einer Variablen mit definierten Properties
-    const shapes = [];
-    
-    // Schlaufe für das mehrfache Erstellen des Cubes mit den oben definierten Properties
-    for (let c = 0; c < 10; c += 1) {
-      shapes.push( translate([0, 0, c * 14 + 15], cube({ size: 10 - c, center: [0, 0, 0] })) );
-    }
+    // for (let c = 0; c < 10; c += 1) {
+    //   shapes.push( translate([0, 0, c * 14 + 15], cube({ size: 10 - c, center: [0, 0, 0] })) );
+    // }
+
+
 
   // when we are done we return one shape or an array of shapes
-  return [
-    objects,
-  ];
+  return extrudeShape;
 };
 
 // this lets javascript know what to execute once we import this
