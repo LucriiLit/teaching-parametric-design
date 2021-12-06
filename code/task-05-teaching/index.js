@@ -14,7 +14,7 @@ const main = () => {
 
     // Erstellen von 2 Variablen (const) die einen Cylinder und ein Quader zugeshrieben bekommen
     const coolerCyli = translate([0, 0, -20], cylinder({ radius: 10 }));
-    const coolerBla = cuboid({ size: [100, 100, 1] });
+    const coolerBla = cuboid({ size: [50, 50, 1] });
 
 
     // Erstellen eines Arrays in den ein Cylinder mit speziellen Werten gepusht wird
