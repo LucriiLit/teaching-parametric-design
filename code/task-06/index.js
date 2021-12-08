@@ -16,25 +16,26 @@ const main = () => {
 
     const extrudeShape = [];
 
-    for (let p = 1; p < 16; p += 1) {
+    for (let p = 1; p < 8; p += 1) {
 
       const circleShape = circle({
-        radius: 16 - p,
-        segments: 50,
-        center: [0, 7]
+        radius: 8 - p,
+        segments: 16,
+        center: [0, 6]
       });
   
       extrudeShape.push (
         translate([-p*2, p*2, 0],
           extrudeRectangular({
-            height: p * 10,
+            height: p * 20,
             twistAngle: Math.PI * 2,
-            twistSteps: 9
+            twistSteps: 18
           }, circleShape),
         )
       );
     }
 
+    //
     // for (let c = 0; c < 10; c += 1) {
     //   shapes.push( translate([0, 0, c * 14 + 15], cube({ size: 10 - c, center: [0, 0, 0] })) );
     // }
