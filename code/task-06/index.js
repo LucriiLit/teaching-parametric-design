@@ -12,70 +12,37 @@ const {translate, rotate, scale, center, align} = jscad.transforms;
 // this is where we draw our shapes
 const main = () => {
 
-    const circleShape = circle({
-      radius: 20,
-      segments: 100,
-      center: [0, 7]
-    });
 
 
+    const extrudeShape = [];
 
-    // genestete Eigenschaften (extrudieren, transformieren, rotieren)
-    const rotateTransformedExtrudeShape = 
-      extrudeRectangular({
-        height: 100,
-        twistAngle: Math.PI * 4,
-        twistSteps: 8
-      },
-      
-        translate(
-          [0, 0, 0],
-          circleShape,
-          
-          rotate(
-            [0, Math.PI*2, 0],
-            circleShape,
-            
-    ), ), circleShape);
+    for (let p = 1; p < 16; p += 1) {
 
-
-    const circleShape3 = [];
-
-
-    for (let c = 1; c < 6; c += 1) {
-      circleShape3.push ( 
-        translate([20 + 2 * c, 2 * c, 0], 
-          cuboid({ size: [10,10,10 * c] }
-      )));
+      const circleShape = circle({
+        radius: 16 - p,
+        segments: 50,
+        center: [0, 7]
+      });
+  
+      extrudeShape.push (
+        translate([-p*2, p*2, 0],
+          extrudeRectangular({
+            height: p * 10,
+            twistAngle: Math.PI * 2,
+            twistSteps: 9
+          }, circleShape),
+        )
+      );
     }
-    
 
-
-
-
-
-    // //extrudierungsschlaufe just 4 fun
-    // const circleShape2 = [];
-
-    // // 
-    // for (let c = 1; c < 11; c += 1) {
-    //   circleShape2.push( 
-    //     translate([c * 60, 0, 0], 
-    //       extrudeRectangular({ height: 100, twistAngle: Math.PI * c, twistSteps: 40 },
-    //         circle({ radius: c, segments: c + 2, center: [c, c] }
-    //   ))));
+    // for (let c = 0; c < 10; c += 1) {
+    //   shapes.push( translate([0, 0, c * 14 + 15], cube({ size: 10 - c, center: [0, 0, 0] })) );
     // }
 
 
 
-    const colorObject = colorize(
-      colorNameToRgb('lightblue'),
-      circleShape,
-    );
-
-
   // when we are done we return one shape or an array of shapes
-  return [circleShape3];
+  return extrudeShape;
 };
 
 // this lets javascript know what to execute once we import this
