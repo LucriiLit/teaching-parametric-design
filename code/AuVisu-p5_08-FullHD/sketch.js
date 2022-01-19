@@ -1,5 +1,5 @@
-const sketchHeight = 1080;
-const sketchWidth = 1920;
+const sketchHeight = 2280;
+const sketchWidth = 3920;
 
 
 let audio;
@@ -72,7 +72,7 @@ function draw() {
   translate(width / 2, height / 2);
   strokeWeight(1);
   noFill();
-  scale(0.3);
+  scale(2);
 
   //RADIAL SPECTRUM LINES
   push();
