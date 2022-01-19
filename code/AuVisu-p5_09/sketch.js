@@ -1,5 +1,5 @@
-const sketchHeight = 400;
-const sketchWidth = 400;
+const sketchHeight = 800;
+const sketchWidth = 800;
 
 
 let audio;
@@ -55,10 +55,6 @@ function setup() {
   button2 = createButton("play Vivaldi");
   button2.mousePressed(togglePlaying2);
 
-  // audio activation...
-  // fft = new p5.FFT(0.8, 64); //smooth Value by avaraging previous with actual Data
-  // amp = new p5.Amplitude();
-
   mic = new p5.AudioIn();
   mic.start();
 }
@@ -72,7 +68,7 @@ function draw() {
   translate(width / 2, height / 2);
   strokeWeight(1);
   noFill();
-  scale(1);
+  scale(1.5);
 
   //RADIAL SPECTRUM LINES
   push();
@@ -128,7 +124,7 @@ function draw() {
     }
   pop();
 
-    console.log(micLevels2.length);
+    // console.log(micLevels2);
 
 }
 
