@@ -1,12 +1,12 @@
-const sketchHeight = 400;
-const sketchWidth = 400;
+const sketchHeight = 800;
+const sketchWidth = 800;
 
 let r = 150;
 let kreise = 8;
 
 
 //almost useless Array
-let translates = [200,0,100,400,50,150,250,300,350];
+let translates = [400,0,100,400,50,150,250,300,350];
 let swappX = 0;
 let swappY = 0;
 
@@ -65,6 +65,7 @@ function draw() {
   background(0, 25, 25, 60); //zweite Ziffer = Transparenz zum vorherigen Durchlauf
   translate(translates[swappX], translates[swappY]);
   noFill();
+  scale(1.5);
 
   let increment = map(mouseX, 100, width, 0.01, PI); //X-Wert der Maus im Browser auslesen
 
