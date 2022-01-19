@@ -1,5 +1,5 @@
-const sketchHeight = 400;
-const sketchWidth = 400;
+const sketchHeight = 800;
+const sketchWidth = 800;
 
 let r = 150;
 let kreise = 8;
@@ -68,6 +68,7 @@ function draw() {
   // stroke(255);
   noStroke();
   // fill(0, 100);
+  scale(1.5);
 
 
 
